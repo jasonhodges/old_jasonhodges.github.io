@@ -3,14 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>{% if page.title %}{{ page.title }}{% else %}Jason Hodges{% endif %}</title>
         <meta name="viewport" content="width=device-width">
 
-        <!-- syntax highlighting CSS -->
-        <link rel="stylesheet" href="/css/syntax.css">
-
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="/css/main.css" />
+        <link rel="stylesheet" href="/css/syntax.css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <!--[if lt IE 9]>
+        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
     </head>
     <body>
@@ -26,19 +27,32 @@
           <div class="footer">
             <div class="contact">
               <p>
-                Your Name<br />
-                What You Are<br />
-                you@example.com
+                Jason Hodges<br />
+                Father, Husband, little crazy<br />
+                jason@jasonhodges.me
               </p>
             </div>
             <div class="contact">
               <p>
-                <a href="https://github.com/yourusername">github.com/yourusername</a><br />
-                <a href="https://twitter.com/yourusername">twitter.com/yourusername</a><br />
+                <a href="https://github.com/jasonhodges">github.com/jasonhodges</a><br />
+                <a href="https://twitter.com/_jasonhodges">twitter.com/_jasonhodges</a><br />
               </p>
             </div>
           </div>
         </div>
+      <script type="text/javascript">
+              var disqus_shortname = 'jasonhodges',
+                  disqus_identifier = '{{ page.path | split:'/' | last | cgi_escape }}',
+                  disqus_url        = '{{ site.url }}{{ page.url | uri_escape }}'
+              ;
 
+              /* * * DON'T EDIT BELOW THIS LINE * * */
+              (function () {
+                  var s = document.createElement('script'); s.async = true;
+                  s.type = 'text/javascript';
+                  s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+                  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+              }());
+      </script>
     </body>
 </html>

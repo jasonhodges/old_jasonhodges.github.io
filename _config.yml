@@ -1,3 +1,13 @@
-name: JasonHodges.me
+name: 'JasonHodges.me'
+url: 'http://jasonhodges.me'
+author: 'Jason Hodges'
+
+paginate: 10
+paginate_path: '/blog/page:num/'
+permalink: '/blog/:year/:title/'
+relative_permalinks: false
+
+timezone: 'America/Indiana'
+
 markdown: redcarpet
 pygments: true
