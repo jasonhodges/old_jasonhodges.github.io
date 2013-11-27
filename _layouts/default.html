@@ -21,8 +21,10 @@
             <h1 class="title"><a href="/">{{ site.name }}</a></h1>
             <a class="extra" href="/">home</a>
           </div>
-
-          {{ content }}
+          <section>
+            {{ content }}
+          </section>
+          
 
           <div class="footer">
             <div class="contact">
@@ -41,18 +43,20 @@
           </div>
         </div>
       <script type="text/javascript">
-              var disqus_shortname = 'jasonhodges',
-                  disqus_identifier = '{{ page.path | split:'/' | last | cgi_escape }}',
-                  disqus_url        = '{{ site.url }}{{ page.url | uri_escape }}'
-              ;
-
-              /* * * DON'T EDIT BELOW THIS LINE * * */
-              (function () {
-                  var s = document.createElement('script'); s.async = true;
-                  s.type = 'text/javascript';
-                  s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-                  (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-              }());
-      </script>
+  var disqus_shortname  = 'jasonhodges',
+      disqus_identifier = '{{ page.path | split:'/' | last | cgi_escape }}',
+      disqus_url        = '{{ site.url }}{{ page.url | uri_escape }}'
+  ;
+  (function() {
+    var load = function(src){
+      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = src;
+      var e = document.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e);
+    };
+    load('//' + disqus_shortname + '.disqus.com/count.js');
+    if (document.getElementById('disqus_thread')) {
+      load('//' + disqus_shortname + '.disqus.com/embed.js');
+    }
+  })();
+</script>
     </body>
 </html>
