@@ -1,67 +1,65 @@
 {% capture location %}{{ page.url | remove_first:'/' | split:'/' | first }}{% endcapture %}<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-        <title>{% if page.title %}{{ page.title }}{% else %}Jason Hodges{% endif %}</title>
-
-        <link rel="canonical" href="{{ page.url }}" />
-
-        <meta name="viewport" content="width=device-width">
-
-        <link rel="stylesheet" href="/css/main.css" />
-        <link rel="stylesheet" href="/css/syntax.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <!--[if lt IE 9]>
-        <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
-    </head>
-    <body>
-
-        <div class="site">
-          <header>
-            <h1><a href="/"><img src="/img/logo.png" alt="{{ site.name }}" width="300" /></a></h1>
-            <h1><a href="/">{{ site.name }}</a></h1>
-            <a class="extra" href="/">home</a>
-          </header>
-          <section>
-            {{ content }}
-          </section>
-          
-
-          <div class="footer">
-            <div class="contact">
-              <p>
-                Jason Hodges<br />
-                Father, Husband and a little crazy<br />
-                jason@jasonhodges.me
-              </p>
-            </div>
-            <div class="contact">
-              <p>
-                <a href="https://github.com/jasonhodges">github.com/jasonhodges</a><br />
-                <a href="https://twitter.com/_jasonhodges">twitter.com/_jasonhodges</a><br />
-              </p>
-            </div>
-          </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <title>{% if page.title %}{{ page.title }}{% else %}Jason Hodges{% endif %}</title>
+    <link rel="canonical" href="{{ page.url }}" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="/css/syntax.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="site">
+      <header>
+        <h1><a href="/"><img src="/img/logo.png" alt="{{ site.name }}" width="300" /></a></h1>
+        <nav><ul>
+          <li><a {% if location == 'about' %}class="active" {% endif %}href="/about/">About</a></li>
+          <li><a {% if location == 'projects' %}class="active" {% endif %}href="/projects/">Projects</a></li>
+          <li><a {% if location == 'blog' %}class="active" {% endif %}href="/blog/">Blog</a></li>
+          <li><a {% if location == 'contact' %}class="active" {% endif %}href="/contact/">Contact</a></li>
+        </ul></nav>
+      </header>
+      <section>
+        {{ content }}
+      </section>
+      
+      <div class="footer">
+        <div class="contact">
+          <p>
+          Jason Hodges<br />
+          Father, Husband and a little crazy<br />
+          jason@jasonhodges.me
+          </p>
         </div>
-        <script src="js/scale.fix.js"></script>
-      <script type="text/javascript">
-  var disqus_shortname  = 'jasonhodges',
-      disqus_identifier = '{{ page.path | split:'/' | last | cgi_escape }}',
-      disqus_url        = '{{ site.url }}{{ page.url | uri_escape }}'
-  ;
-  (function() {
+        <div class="contact">
+          <p>
+          <a href="https://github.com/jasonhodges">github.com/jasonhodges</a><br />
+          <a href="https://twitter.com/_jasonhodges">twitter.com/_jasonhodges</a><br />
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="js/scale.fix.js"></script>
+    <script type="text/javascript">
+    var disqus_shortname  = 'jasonhodges',
+    disqus_identifier = '{{ page.path | split:'/' | last | cgi_escape }}',
+    disqus_url        = '{{ site.url }}{{ page.url | uri_escape }}'
+    ;
+    (function() {
     var load = function(src){
-      var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = src;
-      var e = document.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e);
+    var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = src;
+    var e = document.getElementsByTagName('script')[0]; e.parentNode.insertBefore(s, e);
     };
     load('//' + disqus_shortname + '.disqus.com/count.js');
     if (document.getElementById('disqus_thread')) {
-      load('//' + disqus_shortname + '.disqus.com/embed.js');
+    load('//' + disqus_shortname + '.disqus.com/embed.js');
     }
-  })();
-</script>
-    </body>
+    })();
+    </script>
+  </body>
 </html>
