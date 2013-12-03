@@ -107,6 +107,9 @@ img {
   max-width:100%;
 }
 
+/*--------------------*\
+    $Header
+\*--------------------*/
 header {
   width:275px;
   float:left;
@@ -117,6 +120,9 @@ header {
   margin: -50px 0;
 }
 
+/*--------------------*\
+    $Navagation
+\*--------------------*/
 nav ul {
   list-style:none;
   height:20px;
