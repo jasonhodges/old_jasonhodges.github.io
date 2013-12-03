@@ -1,5 +1,5 @@
 ---
 permalink: /
 layout: default
-title: Home
+blogfeed: true
 ---

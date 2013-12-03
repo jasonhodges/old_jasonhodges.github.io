@@ -174,7 +174,7 @@ header ul li + li + li {
   width:89px;*/
 }
 
-header ul a strong {
+nav ul a strong {
   font-size:14px;
   display:block;
   color:#222;
@@ -239,7 +239,7 @@ footer {
     display:inline;
   }
   
-  header ul {
+  nav ul {
     position:absolute;
     right:50px;
     top:52px;
@@ -256,7 +256,7 @@ footer {
     text-align: center;
   }
   
-  header ul, header p.view {
+  nav ul, header p.view {
     position:static;
   }
   
