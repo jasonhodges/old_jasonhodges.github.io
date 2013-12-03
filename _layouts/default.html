@@ -6,6 +6,7 @@
         <title>{% if page.title %}{{ page.title }}{% else %}Jason Hodges{% endif %}</title>
 
         <link rel="canonical" href="{{ page.url }}" />
+
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="/css/main.css" />
@@ -19,10 +20,11 @@
     <body>
 
         <div class="site">
-          <div class="header">
-            <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+          <header>
+            <h1><a href="/"><img src="/img/logo.png" alt="{{ site.name }}" width="300" /></a></h1>
+            <h1><a href="/">{{ site.name }}</a></h1>
             <a class="extra" href="/">home</a>
-          </div>
+          </header>
           <section>
             {{ content }}
           </section>
