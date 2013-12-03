@@ -156,12 +156,6 @@ header ul a {
 
 header ul a:hover {
   color:#999;
-  background: -moz-linear-gradient(top, #fff 0%, #ddd 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(100%,#ddd));
-  background: -webkit-linear-gradient(top, #fff 0%,#ddd 100%);
-  background: -o-linear-gradient(top, #fff 0%,#ddd 100%);
-  background: -ms-linear-gradient(top, #fff 0%,#ddd 100%);
-  background: linear-gradient(top, #fff 0%,#ddd 100%);
 }
 
 header ul a:active {
