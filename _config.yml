@@ -14,5 +14,5 @@ excerpt_seperator: "{{more}}"
 timezone: 'America/Indiana'
 
 safe: true
-markdown: maruku
+markdown: 'maruku'
 pygments: false
