@@ -10,5 +10,5 @@ relative_permalinks: false
 
 timezone: 'America/Indiana'
 
-markdown: redcarpet
+markdown: maruku
 pygments: true
