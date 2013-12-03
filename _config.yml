@@ -2,13 +2,17 @@ name: 'JasonHodges.me'
 url: 'http://jasonhodges.me'
 author: 'Jason Hodges'
 
+include: ['_pages']
+
 paginate: 10
 paginate_path: '/blog/page:num/'
 permalink: '/blog/:year/:title/'
-include: ['_pages']
 relative_permalinks: false
+
+excerpt_seperator: "{{more}}"
 
 timezone: 'America/Indiana'
 
+safe: true
 markdown: maruku
-pygments: true
+pygments: false
