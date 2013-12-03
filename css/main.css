@@ -177,9 +177,11 @@ header ul a strong {
 }
 
 section {
-  width:500px;
+  width:600px;
   float:right;
   padding-bottom:50px;
+  overflow: hidden;
+  min-height: 400px;
 }
 
 small {
