@@ -14,7 +14,7 @@
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
+    <div class="wrapper{% if location == '' %} home{% endif %}">
       <header>
         <h1><a href="/"><img src="/img/logo.png" alt="{{ site.name }}" width="300" /></a></h1>
         <nav><ul>
