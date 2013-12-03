@@ -9,7 +9,7 @@ paginate_path: '/blog/page:num/'
 permalink: '/blog/:year/:title/'
 relative_permalinks: false
 
-excerpt_seperator: "{{more}}"
+excerpt_separator: "{{more}}"
 
 timezone: 'America/Indiana'
 
