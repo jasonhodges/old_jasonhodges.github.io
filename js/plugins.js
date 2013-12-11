@@ -117,7 +117,7 @@ var skipTo = {
 
 // disqus
 // required: replace example with your forum shortname
-var disqus_shortname = 'mattycollins';
+var disqus_shortname = 'jasonhodges';
 
 (function() {
 	var $comments = $("#disqus_thread");
