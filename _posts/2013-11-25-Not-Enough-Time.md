@@ -1,6 +1,8 @@
 ---
-layout: post
+layout: default
 title:  "Not Enough Time"
+excerpt : I feel like I am always at a loss of time. 
+comments : true
 date:   2013-11-25
 categories: life
 ---
