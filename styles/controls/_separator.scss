@@ -1,0 +1,9 @@
+.m-separator {
+	@include breakpoint(3) {
+		display: none;
+	}
+	color: $giraffe__yellow--dark;
+
+	&:before,
+	&:after { border-color: $giraffe__yellow--dark; }
+}

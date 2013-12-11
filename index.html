@@ -1,13 +1,20 @@
 ---
-layout: default
-title: Jason Hodges.me
+layout: home
+seo__desc: Jason Hodges is a front-end developer finding his place in the web
+seo__key: front end, frontend, front-end, front end developer, responsive, responsive design
 ---
+<div class="m-home__intro t-sector--heading t-sector--hero">
+	<div class="page__width">
+		<h1 class="page__title offscreen">Jason Hodges</h1>
+		<span class="alpha">Hello</span> <span class="home__tagline">How are you?</span>
+		
+	</div>
+</div>
 
-<div id="home">
-  <h1>Ramblings</h1>
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
+<div class="t-sector--muted m-home__content">
+	<div class="page__width t-copy">
+		<p>&hellip;*stuff*</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi sed dignissimos ex aut aperiam consectetur eaque. Tempore, repellendus distinctio corrupti quaerat eum neque commodi ad sunt ipsum tempora. Deleniti, quia.</p>
+		</p>
+	</div>
 </div>

@@ -1,0 +1,42 @@
+{% include head.html %}
+<body data-page-id="home">
+	{% include header.html %}
+	<div class="page__body">
+		<i class="sprite s-giraffe__head"></i>
+		<i class="sprite s-giraffe__neck"></i>
+		<i class="sprite s-giraffe__body"></i>
+
+		<div role="main" id="content">
+			{{content}}
+		</div>
+
+		<section>
+			<div class="page__width">
+				<header class="gamma gamma--line">
+					<span class="gamma__text">blog</span>
+				</header>
+				<ol class="blog--list" data-columns="3">
+					<!-- http://foldl.me/2012/jekyll-excerpts/ -->
+					{% for post in site.posts limit: 3 %}
+						<li class=" blog__item layout-column spans--1">
+							<a href="{{ post.url }}" class="blog__title delta">
+								{{ post.title }}
+							</a>
+							<div class="t-copy">
+								<div class="blog__summary">
+									{{ post.content | split: '<!-- /intro -->' | first }}
+								</div>
+								<a href="{{post.url}}" class="teaser__more">
+									Continue reading <i class="icon-double-angle-right"></i>
+									<span class="offscreen"> about {{post.title}}</span>
+								</a>
+							</div>
+						</li>
+					{% endfor %}
+				</ol>
+			</div>
+		</section>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

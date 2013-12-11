@@ -1,0 +1,26 @@
+{% include head.html %}
+<body>
+	{% include header.html %}
+	<div class="page__body">
+		<i class="sprite s-giraffe__head"></i>
+		<i class="sprite s-giraffe__neck"></i>
+		<i class="sprite s-giraffe__body"></i>
+
+		<div class="t-sector--heading">
+			<div class="page__width">
+				<h1 class="page__title alpha">{{page.title}}</h1>
+			</div>
+		</div>
+
+		<div class="page__width layout--reversed" data-columns="3" role="main" id="content">
+			<div class="layout-column spans--1">
+				{% include bio.html %}
+			</div>
+			<section class="layout-column spans--2">
+				{{content}}
+			</section>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>

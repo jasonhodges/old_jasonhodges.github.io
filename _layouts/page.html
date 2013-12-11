@@ -1,0 +1,35 @@
+{% include head.html %}
+{% if page.uniqueID %}
+	<body data-page-id="{{page.uniqueID}}">
+{% else %}
+	<body>
+{% endif %}
+	{% include header.html %}
+	<div class="page__body">
+		<i class="sprite s-giraffe__head"></i>
+		<i class="sprite s-giraffe__neck"></i>
+		<i class="sprite s-giraffe__body"></i>
+
+		<div class="t-sector--heading">
+			<div class="page__width">
+				<h1 class="page__title alpha">{{page.title}}</h1>
+			</div>
+		</div>
+
+		<div class="page__width" data-columns="3">
+			<section class="layout-column spans--2" role="main" id="content">
+				{{content}}
+			</section>
+			<div class="layout-column spans--1">
+				<div class="m-separator gamma gamma--line">
+					<span class="gamma__text">
+						<i class="icon-code"></i>
+					</span>
+				</div>
+				{% include bio.html %}
+			</div>
+		</div>
+	</div>
+	{% include footer.html %}
+</body>
+</html>
