@@ -19,7 +19,7 @@ $green--dark : darken($green, 10%);
 $brown : #3D2B15 ;
 $brown--dark : darken($brown, 10%);
 
-$linkcolor__one : $green;
+$linkcolor__one : saturation($green);
 
 
 
