@@ -122,12 +122,12 @@ body {
 %link,
 .link {
 	color: $linkcolor__one;
-	border-bottom: 1px dashed #70699e;
+	border-bottom: 1px dashed darken($linkcolor__one, 10%);
 	text-decoration: none;
 
 
 	&:hover,
-	&:focus { background: #f3ebe8; border-bottom-style: solid; }
+	&:focus { font-weight:bold; border-bottom-style: solid; }
 }
 
 
