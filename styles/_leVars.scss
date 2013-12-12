@@ -8,15 +8,15 @@ $bodyFontSize : 13px;
 
 // theme
 $blue : #677E87;
-$blue--light : lighten($blue, 20%);
+$blue--light : lighten($blue, 10%);
 // 737e8c
 
 $red : #719E83;
-$red--light : lighten($red, 20%);
-$red--dark : darken($red, 20%);
+$red--light : lighten($red, 10%);
+$red--dark : darken($red, 10%);
 
 $giraffe__yellow : complement($red) ;
-$giraffe__yellow--dark : darken($giraffe__yellow, 20%);
+$giraffe__yellow--dark : darken($giraffe__yellow, 10%);
 
 
 
