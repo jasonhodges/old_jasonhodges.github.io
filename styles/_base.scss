@@ -121,7 +121,7 @@ body {
 
 %link,
 .link {
-	color: #8174d3;
+	color: $linkcolor__one;
 	border-bottom: 1px dashed #70699e;
 	text-decoration: none;
 
@@ -175,7 +175,7 @@ ins {
 
 			&:hover,
 			&:focus {
-				color: #8174d3;
+				color: $linkcolor__one;
 				border-bottom-color: #70699e;
 			}
 		}

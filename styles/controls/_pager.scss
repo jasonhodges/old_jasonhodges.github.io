@@ -10,12 +10,12 @@
 
 	a {
 		text-decoration: none;
-		color: #8174d3;
+		color: $linkcolor__one;
 		padding: 0 6px;
 
 		&:hover,
 		&:focus {
-			background: #8174d3;
+			background: $linkcolor__one;
 			color: #fff;
 		}
 	}
