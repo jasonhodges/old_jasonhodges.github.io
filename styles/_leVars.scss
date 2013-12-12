@@ -9,14 +9,14 @@ $bodyFontSize : 13px;
 // theme
 $lightbg : #B7E7FF;
 
-$blue : #6ACDFF;
-$blue--light : lighten($blue, 10%);
+$grey : #EDEDED;
+$grey--light : lighten($grey, 10%);
 
 $red : #719E83;
 $red--light : lighten($red, 10%);
 $red--dark : darken($red, 10%);
 
-$giraffe__yellow : complement($blue) ;
+$giraffe__yellow : complement($grey) ;
 $giraffe__yellow--dark : darken($giraffe__yellow, 10%);
 
 
