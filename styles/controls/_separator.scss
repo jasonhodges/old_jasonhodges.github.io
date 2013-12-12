@@ -2,8 +2,8 @@
 	@include breakpoint(3) {
 		display: none;
 	}
-	color: $giraffe__yellow--dark;
+	color: $brown--dark;
 
 	&:before,
-	&:after { border-color: $giraffe__yellow--dark; }
+	&:after { border-color: $brown--dark; }
 }
