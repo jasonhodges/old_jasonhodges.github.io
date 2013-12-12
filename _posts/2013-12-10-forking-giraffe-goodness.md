@@ -1,6 +1,6 @@
 ---
 layout : default
-title: Test After Forking Giraffe Goodness
+title: Forking Giraffe Goodness
 excerpt : This is a test after pulling over all the goodness from <a href="https://github.com/Piderman/mattycollins.com.au">Matty's build</a> 
 comments : true
 seo__desc : seo_description
