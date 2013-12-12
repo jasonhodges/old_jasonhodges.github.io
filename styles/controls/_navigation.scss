@@ -66,7 +66,7 @@
 			color: $giraffe__yellow;
 
 			&:hover,
-			&:focus { color: #fff7f3; }
+			&:focus { color: $lightbg; }
 
 			// home has blue theme
 			[data-page-id="home"] & {
