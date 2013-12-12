@@ -16,7 +16,7 @@ $red : #719E83;
 $red--light : lighten($red, 10%);
 $red--dark : darken($red, 10%);
 
-$giraffe__yellow : complement($red) ;
+$giraffe__yellow : complement($blue) ;
 $giraffe__yellow--dark : darken($giraffe__yellow, 10%);
 
 
