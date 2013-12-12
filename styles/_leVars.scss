@@ -8,6 +8,7 @@ $bodyFontSize : 13px;
 
 // theme
 $lightbg : #DFE8E7;
+$lightbg--dark : darken($lightbg, 10%);
 
 $grey : #EDEDED;
 $grey--light : lighten($grey, 10%);
