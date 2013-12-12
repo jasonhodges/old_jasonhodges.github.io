@@ -40,7 +40,7 @@ html { color: #1b1a1a; }
 
 .t-sector--muted {
 	padding: 1em 0;
-	background: #a3a3a3 url($noise);
+	background: $lightbg--light url($noise);
 }
 
 
