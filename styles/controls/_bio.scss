@@ -6,7 +6,7 @@
 
 	.bio__img {
 		@include box-sizing(border-box);
-		@include border-radius(50%);
+		// @include border-radius(50%);
 
 		padding: 2px;
 		border: 2px dashed $brown--dark;
