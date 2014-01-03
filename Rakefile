@@ -68,7 +68,7 @@ task :local do
 
 
   # need to watch jekyll and le sass
-  sh "jekyll serve --watch --draft & sass --watch --sourcemap giraffe/styles:giraffe/styles &"
+  sh "jekyll serve --watch --draft & sass --watch --sourcemap styles:styles &"
 end
 
 
