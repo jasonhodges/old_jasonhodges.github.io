@@ -1,6 +1,7 @@
 ---
 layout: default
 title:  "Crazy Life"
+blog: true
 excerpt : It's crazy this world we live in. Some people have money, others struggle with making ends meet. 
 comments : true
 date:   2013-11-15 20:12:00
