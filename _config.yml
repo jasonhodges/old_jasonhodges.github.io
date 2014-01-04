@@ -1,8 +1,8 @@
 name: 'JasonHodges.me'
 url: 'http://jasonhodges.me'
 author: 'Jason Hodges'
-paginate: 5
-paginate_path: "/blog/page:num/"
+# paginate: 5
+# paginate_path: "/blog/page:num/"
 permalink : /blog/:categories/:title
 timezone: 'America/Indiana'
 pygments: false
