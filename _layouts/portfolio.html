@@ -67,7 +67,7 @@
 				<h2 class="delta">Recent posts are recent</h2>
 				<ol class="blog--list t-separated blog--mini">
 					{% for post in site.posts limit: 3 %}
-						{% if post.portfolio}
+						{% if post.portfolio %}
 							<li class="separated__item t-copy">
 								<a href="{{ post.url }}" class="blog__title">
 									{{ post.title }}
