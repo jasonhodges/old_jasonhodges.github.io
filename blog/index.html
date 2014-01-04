@@ -4,7 +4,8 @@ title: ramblings
 ---
 <ol class="blog--list">
 	{% for post in site.posts %}
-		<li class="blog__item">
+		{% if post.blog %}
+			<li class="blog__item">
 			<a href="{{ post.url }}" class="blog__title delta">
 				{{ post.title }}
 			</a>
@@ -20,7 +21,8 @@ title: ramblings
 					<span class="offscreen"> about {{post.title}}</span>
 				</a>
 			</div>
-		</li>
+			</li>
+		{% endif %}
 	{% endfor %}
 </ol>
 
