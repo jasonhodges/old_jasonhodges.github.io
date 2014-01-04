@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: portfolio
 title: I'm a Portfolio Item! 
 portfolio: true
 permalink: /stuff/I'mAPortfolioItem
