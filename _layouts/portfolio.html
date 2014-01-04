@@ -67,17 +67,19 @@
 				<h2 class="delta">Recent posts are recent</h2>
 				<ol class="blog--list t-separated blog--mini">
 					{% for post in site.posts limit: 3 %}
-						<li class="separated__item t-copy">
-							<a href="{{ post.url }}" class="blog__title">
-								{{ post.title }}
-							</a>
-							<span class="date">{{ post.date | date: "%d %b" }}</span>
-							<p> {{ post.excerpt }} </p>
-						</li>
+						{% if post.portfolio}
+							<li class="separated__item t-copy">
+								<a href="{{ post.url }}" class="blog__title">
+									{{ post.title }}
+								</a>
+								<span class="date">{{ post.date | date: "%d %b" }}</span>
+								<p> {{ post.excerpt }} </p>
+							</li>
+						{% endif %}
 					{% endfor%}
 				</ol>
-				<a href="/blog/" class="link">
-					more entries
+				<a href="/stuff/" class="link">
+					more stuff
 					<i class="icon-chevron-sign-right"></i>
 				</a>
 			</div>
