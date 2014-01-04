@@ -1,16 +1,15 @@
 ---
 layout: portfolio
-title: Stuff It 
+title: Portfolio Item 
 portfolio: true
-permalink: /stuff/StuffIt
+permalink: /stuff/PortfolioItem
 
-excerpt : Stuff It is a second test portfolio post
+excerpt : First portfolio test post
 comments : false
 seo__desc : seo_description
 seo__key : seo_keyword, search_engine_keywords
 ---
 
-<img src="http://placehold.it/350x350">
+<img src="http://placehold.it/150x350">
 <!-- /intro -->
-###Stuff It 
-This is just a little portfolio post as a second test
+###Portfolio Item 
