@@ -1,5 +1,5 @@
 ---
-layout: portfolio
+layout: default
 title: I'm a Portfolio Item! 
 portfolio: true
 
