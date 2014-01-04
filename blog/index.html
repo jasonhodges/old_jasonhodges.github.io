@@ -3,7 +3,7 @@ layout: page
 title: ramblings
 ---
 <ol class="blog--list">
-	{% for post in paginator.posts %}
+	{% for post in site.posts %}
 		<li class="blog__item">
 			<a href="{{ post.url }}" class="blog__title delta">
 				{{ post.title }}
