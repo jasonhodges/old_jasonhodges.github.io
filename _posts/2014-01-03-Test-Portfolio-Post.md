@@ -1,6 +1,6 @@
 ---
-title: I'm a Portfolio Item!
-layout: portfolio 
+layout: portfolio
+title: I'm a Portfolio Item! 
 portfolio: true
 
 excerpt : This is a test post to see if the portfolio is working
