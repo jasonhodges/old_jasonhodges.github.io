@@ -2,6 +2,7 @@
 layout: default
 title: I'm a Portfolio Item! 
 portfolio: true
+permalink: /I'm a Portfolio Item
 
 excerpt : This is a test post to see if the portfolio is working
 comments : false
