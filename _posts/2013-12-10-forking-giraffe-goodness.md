@@ -2,6 +2,7 @@
 layout : default
 title: Forking Giraffe Goodness
 blog: true
+permalink: /blog/Forking_Giraffe_Goodness
 excerpt : This is a test after pulling over all the goodness from <a href="https://github.com/Piderman/mattycollins.com.au" target="_new">Matty's build</a> 
 comments : true
 seo__desc : seo_description
