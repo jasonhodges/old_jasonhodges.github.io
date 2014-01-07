@@ -5,6 +5,6 @@ author: 'Jason Hodges'
 # paginate_path: "/blog/page:num/"
 # permalink : /blog/:categories/:title
 timezone: 'America/Indiana'
-pygments: false
+pygments: true
 markdown: rdiscount
 exclude : ["*.orig", "readme.md", "*.todo", "*.scss", "Guardfile", "*.sublime-*", "config.rb", "Rakefile"]
