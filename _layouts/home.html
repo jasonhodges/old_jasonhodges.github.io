@@ -15,6 +15,7 @@
 				<ol class="blog--list" data-columns="3">
 					<!-- http://foldl.me/2012/jekyll-excerpts/ -->
 					{% for post in site.posts limit: 3 %}
+						{% if post.blog %}
 						<li class=" blog__item layout-column spans--1">
 							<a href="{{ post.url }}" class="blog__title delta">
 								{{ post.title }}
@@ -29,6 +30,7 @@
 								</a>
 							</div>
 						</li>
+						{% endif %}
 					{% endfor %}
 				</ol>
 			</div>

@@ -6,4 +6,5 @@ author: 'Jason Hodges'
 # permalink : /blog/:categories/:title
 timezone: 'America/Indiana'
 pygments: false
+markdown: rdiscount
 exclude : ["*.orig", "readme.md", "*.todo", "*.scss", "Guardfile", "*.sublime-*", "config.rb", "Rakefile"]
