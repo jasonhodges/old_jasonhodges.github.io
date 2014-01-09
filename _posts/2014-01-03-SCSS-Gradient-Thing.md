@@ -5,7 +5,7 @@ portfolio: true
 permalink: /stuff/SCSS_Gradient_Thing
 
 excerpt : gradient thing using SCSS control directive 
-comments : false
+comments : true
 seo__desc : gradient thing made with SCSS control directive while loop
 seo__key : SCSS, Sass, CodePen, web, code, Jason Hodges
 ---
