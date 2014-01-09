@@ -2,7 +2,7 @@
 layout: portfolio
 title: SCSS Gradient Thing 
 portfolio: true
-permalink: /stuff/StuffIt
+permalink: /stuff/SCSS_Gradient_Thing
 
 excerpt : gradient thing using SCSS control directive 
 comments : false
