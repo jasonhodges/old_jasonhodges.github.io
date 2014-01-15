@@ -2,10 +2,11 @@
 layout : default
 title: SCSS gradient
 blog: true
+portfolio: 
 permalink: /blog/SCSS_Gradient
 excerpt : Fun with SCSS @while loop
 comments : true
-seo__desc : SCSS gradient made with a loop and numerous div's
+seo__desc : SCSS gradient twist made with a loop and numerous div's
 seo__key : SCSS, self-education, code, Haml, CodePen 
 ---
 Today I had the idea to experiment with using the SCSS Control Directive, @while, to create a gradient. The result turned out to be pretty cool as well as educational.   
