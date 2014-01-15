@@ -2,6 +2,7 @@
 layout: default
 title:  "Not Enough Time"
 blog: true
+portfolio: 
 excerpt : I feel like I am always at a loss of time. 
 comments : true
 date:   2013-11-25
