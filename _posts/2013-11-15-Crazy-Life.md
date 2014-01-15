@@ -2,6 +2,7 @@
 layout : default
 title:  Crazy Life
 blog: true
+portfolio: 
 permalink: /blog/Crazy_Life
 excerpt : It's crazy this world we live in. Some people have money, others struggle with making ends meet. 
 comments : true
