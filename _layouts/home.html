@@ -1,10 +1,16 @@
-{% include head.html %}
-<body data-page-id="home">
+% include head.html %}
+{% if page.uniqueID %}
+	<body data-page-id="{{page.uniqueID}}">
+{% else %}
+	<body>
+{% endif %}
 	{% include header.html %}
 	<div class="page__body">
-
-		<div role="main" id="content">
-			{{content}}
+	
+		<div class="t-sector--heading">
+			<div class="page__width">
+				<h1 class="page__title alpha">{{page.title}}</h1>
+			</div>
 		</div>
 
 		<section>
