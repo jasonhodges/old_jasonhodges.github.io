@@ -1,11 +1,11 @@
 {% include head.html %}
-{% if page.uniqueID %}
-	<body data-page-id="{{page.uniqueID}}">
-{% else %}
-	<body>
-{% endif %}
+<body data-page-id="stuff">
 	{% include header.html %}
 	<div class="page__body">
+
+		<div role="main" id="content">
+			{{content}}
+		</div>
 
 		<section>
 			<div class="page__width">
@@ -14,7 +14,7 @@
 				</header>
 				<ol class="blog--list" data-columns="3">
 					<!-- http://foldl.me/2012/jekyll-excerpts/ -->
-					{% for post in site.posts limit: 3 %}
+					{% for post in site.posts limit: 9 %}
 						{% if post.portfolio %}
 						<li class=" blog__item layout-column spans--1">
 							<a href="{{ post.url }}" class="blog__title delta">
