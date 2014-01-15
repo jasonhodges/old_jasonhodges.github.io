@@ -13,34 +13,19 @@
 			</div>
 		</div>
 
-		<section>
-			<div class="page__width">
-				<header class="gamma gamma--line">
-					<span class="gamma__text">blog</span>
-				</header>
-				<ol class="blog--list" data-columns="3">
-					<!-- http://foldl.me/2012/jekyll-excerpts/ -->
-					{% for post in site.posts limit: 3 %}
-						{% if post.blog %}
-						<li class=" blog__item layout-column spans--1">
-							<a href="{{ post.url }}" class="blog__title delta">
-								{{ post.title }}
-							</a>
-							<div class="t-copy">
-								<div class="blog__summary">
-									{{ post.content | split: '<!-- /intro -->' | first }}
-								</div>
-								<a href="{{post.url}}" class="teaser__more">
-									Continue reading <i class="icon-double-angle-right"></i>
-									<span class="offscreen"> about {{post.title}}</span>
-								</a>
-							</div>
-						</li>
-						{% endif %}
-					{% endfor %}
-				</ol>
+		<div class="page__width" data-columns="3">
+			<section class="layout-column spans--2" role="main" id="content">
+				{{content}}
+			</section>
+			<div class="layout-column spans--1">
+				<div class="m-separator gamma gamma--line">
+					<span class="gamma__text">
+						<i class="icon-code"></i>
+					</span>
+				</div>
+				{% include bio.html %}
 			</div>
-		</section>
+		</div>
 	</div>
 	{% include footer.html %}
 </body>
