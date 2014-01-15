@@ -2,7 +2,8 @@
 layout : default
 title: SCSS gradient
 blog: true
-portfolio: 
+portfolio: false
+homepage: true 
 permalink: /blog/SCSS_Gradient
 excerpt : Fun with SCSS @while loop
 comments : true
