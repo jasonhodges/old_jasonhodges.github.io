@@ -192,7 +192,7 @@ gulp.task('deploy', () => {
 });
 // 'gulp devdeploy' -- pushes your project folder to Github
 gulp.task('devdeploy', () => {
-  return gulp.src('/**/*')
+  return gulp.src(['~/Sites/JasonHodges.me/*.*', 'src/**/*'])
     .pipe($.ghPages({
       remoteUrl: "https://github.com/jasonhodges/jasonhodges.github.io",
       branch: "development",
