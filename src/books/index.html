@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<span>My Book List</span>
+        <hr>
+        <ul class="books__list">
+            {% for book in site.data.books %}
+            <li>
+                <h3>{{ book.title }}</h3> by {% if book.twitter %}<a href="http://twitter.com/{{ book.twitter }}">{% endif %}{{ book.author }}</a>
+            </li>
+            {% endfor %}
+        </ul>

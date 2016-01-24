@@ -1,0 +1,17 @@
+{
+  "name": "jasonhodges.me",
+  "version": "0.0.0",
+  "authors": [
+    "Jason Hodges <jason@jasonhodges.me>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
