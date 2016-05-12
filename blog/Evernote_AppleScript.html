@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> Evernote AppleScript | Jason Hodges - Web Developer - Columbus, IN</title>
+  
+  <meta name="description" content="AppleScript to create and append top journal entries in Evernote">
+  
+  
+  <meta name="keywords" content="AppleScript, Evernote, script, productivity, workflow">
+  
+  <meta name="description" content="How I wrote an AppleScript to add an Evernote entry">
+  <link rel="canonical" href="jasonhodges.me/blog/Evernote_AppleScript">
+
+  <!-- CSS -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/assets/stylesheets/style.css">
+  <!-- endinject -->
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/assets/images/touch/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/assets/favicon.ico">
+
+  <!-- RSS -->
+  <link type="application/atom+xml" rel="alternate" href="jasonhodges.me/feed.xml" title="jasonhodges.me" />
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">jasonhodges.me</a>
+
+    <nav class="site-nav">
+      <a href="#" class="menu-icon">
+        <svg viewBox="0 0 18 15">
+          <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+
+      <div class="trigger">
+        <a class="page-link" href="/">home</a>
+          <a class="page-link" href="/about/">about</a>
+        <a class="page-link" href="/stuff/">stuff</a>
+
+      </div>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Evernote AppleScript</h1>
+    <p class="post-meta"><time datetime="2014-10-23T00:00:00-04:00" itemprop="datePublished">Oct 23, 2014</time></p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>I use Evernote on a daily basis for many things and find it to be a valuable tool to organize my thoughts, notes, important emails, etc. After all, that is what Evernote is designed for, right? On my mobile I have the app ‘vJournal’ which is simple and straight-forward for making journal entries to Evernote. For those not familiar with the app…It lets you quickly type your entry, add a picture and location if you like, and then upload to your Evernote account. Once the entry reaches Evernote it is entered into a notebook with the current year as its title. This notebook is a sub-notebook of the notebook titled ‘My Journal’. The note is titled with the month, day and year in the following format: October 23, 2014. If a note with this name already exists, the entry submitted is appended to the note. Each entry is also logged with the time of day it was created on top of a gradient background, providing a nice separator for multiple entries.</p>
+
+<p><img src="/assets/images/ENgrad1.png" alt="first Evernote gradient example" /></p>
+
+<p>The fore mentioned process for logging journal entries to Evernote is great, when I have my phone in hand, but what about the majority of the day when my hands are trying to be productive banging away on my Mac? I thought to myself:</p>
+
+<blockquote>
+  <p>“Wouldn’t it be great to have a shortcut, launching a dialog box, accepting
+my thoughts and sending them off to my journal in Evernote?”</p>
+</blockquote>
+
+<p>This is when the idea sparked to explore writing an AppleScript to accomplish this task. I started by heading straight to <a href="https://dev.evernote.com/doc/articles/applescript.php" title="Evernote AppleScript doc">the source</a> for documentation. Scanning through the examples outlined, I was quickly able to gather my thoughts and start coding out the script.</p>
+
+<p>The first step is to display a dialog box that allows for the journal entry.</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="nb">display dialog</span><span class="w"> </span><span class="s2">"Journal Entry"</span><span class="w"> </span><span class="nv">default</span><span class="w"> </span><span class="nv">answer</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="k">set</span><span class="w"> </span><span class="nv">journal_entry</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="na">text returned</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">result</span><span class="w">  </span></code></pre></figure>
+
+<p>Once the entry is complete it is stored in a variable titled <em>journal_entry</em>. Now the call to tell Evernote to launch is evoked. I did not want the process of logging a journal entry to interrupt my workflow by switching to Evernote so I also tell <b>System Events</b> to set the Evernote process visibility to false.</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="s2">"com.evernote.Evernote"</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">launch</span><span class="w">
+</span><span class="nb">delay</span><span class="w"> </span><span class="mf">2.0</span><span class="w">
+
+</span><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="s2">"System Events"</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="na">visible</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">process</span><span class="w"> </span><span class="s2">"Evernote"</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">false</span></code></pre></figure>
+
+<p>Now that Evernote is running a command is sent to check is a notebook titled with the current year exists and if it does not, create one.</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="s2">"com.evernote.Evernote"</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="ow">not</span><span class="w"> </span><span class="p">(</span><span class="nv">notebook</span><span class="w"> </span><span class="nv">named</span><span class="w"> </span><span class="s2">"2014"</span><span class="w"> </span><span class="nb">exists</span><span class="p">))</span><span class="w"> </span><span class="k">then</span><span class="w">
+        </span><span class="nb">make</span><span class="w"> </span><span class="nv">notebook</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="na">properties</span><span class="w"> </span><span class="p">{</span><span class="na">name</span><span class="p">:</span><span class="s2">"2014"</span><span class="p">}</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">if</span><span class="w">
+</span><span class="k">end</span><span class="w"> </span><span class="k">tell</span></code></pre></figure>
+
+<p>The next step was to set some variables for time and date that will be used within the journal entry title and the entry separator.</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span><span class="w"> </span><span class="nv">notebook1</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="s2">"2014"</span><span class="w">
+
+</span><span class="k">set</span><span class="w"> </span><span class="nv">theDate</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">current date</span><span class="w">
+
+</span><span class="k">set</span><span class="w"> </span><span class="nv">titleDate</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">short</span><span class="w"> </span><span class="nv">date</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="p">(</span><span class="nb">current date</span><span class="p">)</span><span class="w">
+
+</span><span class="k">set</span><span class="w"> </span><span class="err">_</span><span class="nv">time</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">time</span><span class="w"> </span><span class="nv">string</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">theDate</span></code></pre></figure>
+
+<p>The next variable set is one I titled <em>journalAppend</em>. This is the content that gets added as each journal entry within the notebook inside Evernote. The first part is the HTML styling that renders each entry as its own item when there are multiple entries for one date. The background gradient produces a nice green gradient or the time of each entry. This helps visually separate each entry. Looking towards the end of the code you see <em>_time</em> which was set in the previous steps and places the time the entry was created, on top of the background gradient. You will also find <em>journal_entry</em> which is the actual entry that was captured by the dialog box in the beginning.</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span><span class="w"> </span><span class="nv">journalAppend</span><span class="w"> </span><span class="k">to</span><span class="w">
+    </span><span class="s2">"&lt;br&gt;
+        &lt;div&gt;
+            &lt;div style=
+                'background-image: linear-gradient(right , rgb(255,255,255) 0%, rgb(59, 180, 40) 85%);                                
+                background-image: -o-linear-gradient(right , rgb(255,255,255) 0%, rgb(59, 180, 40) 85%);                             
+                background-image: -moz-linear-gradient(right , rgb(255,255,255) 0%, rgb(59, 180, 40) 85%);                               
+                background-image: -webkit-linear-gradient(right , rgb(255,255,255) 0%, rgb(59, 180, 40) 85%);                                
+                background-image: -ms-linear-gradient(right , rgb(255,255,255) 0%, rgb(59, 180, 40) 85%);                                
+                background-image: -webkit-gradient(linear,right top,left top,color-stop(0, rgb(255,255,255)),color-stop(0.85, rgb(59, 180, 40)));                                
+                height:26px;                                 
+                margin-left:5px;                                 
+                margin-right:0px;
+                padding-left: 5px;
+                border-top-left-radius: 4px 4px;
+                border-bottom-left-radius: 4px 4px;
+                color:rgb(220,220,220);                                
+                text-align:left;'&gt;"</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="err">_</span><span class="nv">time</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"
+            &lt;/div&gt;
+            &lt;br&gt;
+            &lt;div&gt;
+                &lt;p&gt;"</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">journal_entry</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;"</span></code></pre></figure>
+
+<p>Now that <em>journalAppend</em> has been set with the content for the entry, we proceed with telling Evernote to either find or create a note in our notebook with the date. Remember that the date, set by <em>titleDate</em>, is the title of our entry each day into the journal. I’ll first post the whole command and then explain the steps:</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">tell</span><span class="w"> </span><span class="nb">application</span><span class="w"> </span><span class="na">id</span><span class="w"> </span><span class="s2">"com.evernote.Evernote"</span><span class="w">
+    </span><span class="k">set</span><span class="w"> </span><span class="nv">foundNotes</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">find</span><span class="w"> </span><span class="nv">notes</span><span class="w"> </span><span class="s2">"notebook:\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"2014"</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">" intitle:\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">titleDate</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"\""</span><span class="w">
+    </span><span class="k">set</span><span class="w"> </span><span class="nv">found</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="p">((</span><span class="nv">length</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">foundNotes</span><span class="p">)</span><span class="w"> </span><span class="ow">is not</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w">
+    </span><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">found</span><span class="w"> </span><span class="k">then</span><span class="w">
+        </span><span class="nv">create</span><span class="w"> </span><span class="nv">note</span><span class="w"> </span><span class="na">title</span><span class="w"> </span><span class="nv">titleDate</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">html</span><span class="w"> </span><span class="nv">journalAppend</span><span class="w"> </span><span class="nv">notebook</span><span class="w"> </span><span class="nv">notebook1</span><span class="w">
+    </span><span class="k">else</span><span class="w">
+        </span><span class="k">repeat</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">curnote</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">foundNotes</span><span class="w">
+            </span><span class="k">tell</span><span class="w"> </span><span class="nv">curnote</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">append</span><span class="w"> </span><span class="nv">html</span><span class="w"> </span><span class="nv">journalAppend</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">repeat</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">if</span></code></pre></figure>
+
+<p>I am setting a variable titled <em>foundNotes</em> with an Evernote action to <strong>find notes</strong> and then telling it to look in the notebook “2014” with a title of current date (<em>titleDate</em>)</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span><span class="w"> </span><span class="nv">foundNotes</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nv">find</span><span class="w"> </span><span class="nv">notes</span><span class="w"> </span><span class="s2">"notebook:\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"2014"</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">" intitle:\""</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="nv">titleDate</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="s2">"\""</span></code></pre></figure>
+
+<p>The next line sets a variable, <em>found</em>, to count how many notes were found from the previous command</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">set</span><span class="w"> </span><span class="nv">found</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="p">((</span><span class="nv">length</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nv">foundNotes</span><span class="p">)</span><span class="w"> </span><span class="ow">is not</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span></code></pre></figure>
+
+<p>The next step says if <em>found</em> returns no results, meaning there is not already a note with the current date as the title, then create one - using the current date (<em>titleDate</em>), appending it with the HTML entry (<em>journalAppend</em>), under the notebook “2014” (<em>notebook1</em>)</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">if</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="nv">found</span><span class="w"> </span><span class="k">then</span><span class="w">
+        </span><span class="nv">create</span><span class="w"> </span><span class="nv">note</span><span class="w"> </span><span class="na">title</span><span class="w"> </span><span class="nv">titleDate</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">html</span><span class="w"> </span><span class="nv">journalAppend</span><span class="w"> </span><span class="nv">notebook</span><span class="w"> </span><span class="nv">notebook1</span></code></pre></figure>
+
+<p>Finally, if <em>foundNotes</em> did return a result we want to append the journal entry to the note that has already been created for today</p>
+
+<figure class="highlight"><pre><code class="language-applescript" data-lang="applescript"><span class="k">else</span><span class="w">
+        </span><span class="k">repeat</span><span class="w"> </span><span class="nv">with</span><span class="w"> </span><span class="nv">curnote</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="nv">foundNotes</span><span class="w">
+            </span><span class="k">tell</span><span class="w"> </span><span class="nv">curnote</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nb">append</span><span class="w"> </span><span class="nv">html</span><span class="w"> </span><span class="nv">journalAppend</span><span class="w">
+        </span><span class="k">end</span><span class="w"> </span><span class="k">repeat</span><span class="w">
+    </span><span class="k">end</span><span class="w"> </span><span class="k">if</span></code></pre></figure>
+
+<p>That’s it! I have successfully developed a solution to a help in my daily productivity by allowing me to quickly enter thoughts into Evernote without interrupting my current flow.</p>
+
+<p><img src="/assets/images/ENpost.png" alt="entry to Evernote via Applescript" /></p>
+
+  </div>
+
+    <aside>
+      <h3>Comments</h3>
+      
+      <div id="disqus_thread"></div>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </aside>
+
+</article>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading"></h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li></li>
+          <li><a href="mailto:jason@jasonhodges.me">jason@jasonhodges.me</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          <li>
+            <a href="https://twitter.com/_jasonhodges">
+               <span class="icon icon--twitter">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="#000000" d="M17.71,9.33C17.64,13.95 14.69,17.11 10.28,17.31C8.46,17.39 7.15,16.81 6,16.08C7.34,16.29 9,15.76 9.9,15C8.58,14.86 7.81,14.19 7.44,13.12C7.82,13.18 8.22,13.16 8.58,13.09C7.39,12.69 6.54,11.95 6.5,10.41C6.83,10.57 7.18,10.71 7.64,10.74C6.75,10.23 6.1,8.38 6.85,7.16C8.17,8.61 9.76,9.79 12.37,9.95C11.71,7.15 15.42,5.63 16.97,7.5C17.63,7.38 18.16,7.14 18.68,6.86C18.47,7.5 18.06,7.97 17.56,8.33C18.1,8.26 18.59,8.13 19,7.92C18.75,8.45 18.19,8.93 17.71,9.33M20,2H4A2,2 0 0,0 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
+                </svg>
+              </span>
+              <span class="username">_jasonhodges</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/jasonhodges">
+              <span class="icon icon--github">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="#000000" d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H14.85C14.5,21.92 14.5,21.24 14.5,21V18.26C14.5,17.33 14.17,16.72 13.81,16.41C16.04,16.16 18.38,15.32 18.38,11.5C18.38,10.39 18,9.5 17.35,8.79C17.45,8.54 17.8,7.5 17.25,6.15C17.25,6.15 16.41,5.88 14.5,7.17C13.71,6.95 12.85,6.84 12,6.84C11.15,6.84 10.29,6.95 9.5,7.17C7.59,5.88 6.75,6.15 6.75,6.15C6.2,7.5 6.55,8.54 6.65,8.79C6,9.5 5.62,10.39 5.62,11.5C5.62,15.31 7.95,16.17 10.17,16.42C9.89,16.67 9.63,17.11 9.54,17.76C8.97,18 7.5,18.45 6.63,16.93C6.63,16.93 6.1,15.97 5.1,15.9C5.1,15.9 4.12,15.88 5,16.5C5,16.5 5.68,16.81 6.14,17.97C6.14,17.97 6.73,19.91 9.5,19.31V21C9.5,21.24 9.5,21.92 9.14,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2Z" />
+                </svg>
+              </span>
+              <span class="username">jasonhodges</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/">
+              <span class="icon icon--linkedin">
+                <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                  <path fill="#000000" d="M19,19H16V13.7A1.5,1.5 0 0,0 14.5,12.2A1.5,1.5 0 0,0 13,13.7V19H10V10H13V11.2C13.5,10.36 14.59,9.8 15.5,9.8A3.5,3.5 0 0,1 19,13.3M6.5,8.31C5.5,8.31 4.69,7.5 4.69,6.5A1.81,1.81 0 0,1 6.5,4.69C7.5,4.69 8.31,5.5 8.31,6.5A1.81,1.81 0 0,1 6.5,8.31M8,19H5V10H8M20,2H4C2.89,2 2,2.89 2,4V20A2,2 0 0,0 4,22H20A2,2 0 0,0 22,20V4C22,2.89 21.1,2 20,2Z" />
+                </svg>
+              </span>
+              <span class="username">jasonhodges09</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p class="text">Jason Hodges is a Web Developer located in Columbus Indiana specializing in Website Development and Mobile Web Applications.</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  <!-- JS -->
+  <!-- inject:js -->
+  <script src="/assets/javascript/index.js"></script>
+  <!-- endinject -->
+
+    <!-- Grab Google CDN's jQuery, fall back to local if offline -->
+    <!-- 2.0 for modern browsers, 1.10 for .oldie -->
+    <script>
+      var oldieCheck = Boolean(document.getElementsByTagName('html')[0].className.match(/\soldie\s/g));
+      if(!oldieCheck) {
+        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"><\/script>');
+      } else {
+        document.write('<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"><\/script>');
+      }
+    </script>
+    <script>
+      if(!window.jQuery) {
+        if(!oldieCheck) {
+          document.write('<script src="js/jquery-2.0.2.min.js"><\/script>');
+        } else {
+          document.write('<script src="js/jquery-1.10.1.min.js"><\/script>');
+        }
+      }
+    </script>
+    <script>
+      jQuery("pre code").html(function(index, html) {
+        return html.trim().replace(/^(.*)$/mg, "<span class=\"line\">$1</span>")
+      });
+      $('pre code').each(function( index ) {
+        var codetype = $(this).data('lang');
+        var hilite = $(this).parent().parent();
+        hilite.wrap("<div class=\"codecontainer\"></div>");
+        if(codetype)
+        {
+          hilite.before( "<span class=\"codelabel\">code: <strong>"+codetype+"</strong></span>" );
+        }else{
+          hilite.before( "<span class=\"codelabel\"><strong>code</strong></span>" );
+        }
+      });
+      $("pre code .line").html(function(index, html) {
+        if(!html){
+          return "&nbsp";
+        }else
+        {
+          return html;
+        }
+      });
+    </script>
+  </body>
+</html>

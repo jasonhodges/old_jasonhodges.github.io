@@ -1,9 +1,0 @@
-.m-separator {
-	@include breakpoint(3) {
-		display: none;
-	}
-	color: $brown--dark;
-
-	&:before,
-	&:after { border-color: $brown--dark; }
-}

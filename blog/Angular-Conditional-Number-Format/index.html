@@ -6,13 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title> stuff | Jason Hodges - Web Developer - Columbus, IN</title>
+  <title> Angular Conditional Number Format | Jason Hodges - Web Developer - Columbus, IN</title>
   
-  <meta name="description" content="This is a collection of some things developed by Jason Hodges.">
+  <meta name="description" content="directive to format a number depending on type">
   
   
-  <meta name="description" content="This is a collection of some things developed by Jason Hodges.">
-  <link rel="canonical" href="jasonhodges.me/stuff/">
+  <meta name="keywords" content="Angular, AngularJS, directives, formatting, Columbus IN">
+  
+  <meta name="description" content="Solution to a little number formatting issue I worked out">
+  <link rel="canonical" href="jasonhodges.me/blog/Angular-Conditional-Number-Format/">
 
   <!-- CSS -->
   <!-- inject:css -->
@@ -60,55 +62,74 @@
 
     <div class="page-content">
       <div class="wrapper">
-        
-    <article class="stuff">
-        <h3>
-            <a href="/stuff/jekyll-snippets.html">Jekyll Snippets for Atom editor</a>
-        </h3>
-        <div class="excerpt">
-            <p><a href="https://atom.io/packages/jekyll-snippets">
-<img src="/assets/images/jekyll-snippets.png" alt="Jekyll Snippets for Atom Editor by Jason Hodges" />
-</a></p>
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-            <!-- <p>
-                <a href="/stuff/jekyll-snippets.html">read more &rarr;</a>
-            </p> -->
-        </div>
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Angular Conditional Number Format</h1>
+    <p class="post-meta"><time datetime="2016-03-03T00:00:00-05:00" itemprop="datePublished">Mar 3, 2016</time></p>
+  </header>
 
-    </article>
+  <div class="post-content" itemprop="articleBody">
+    <p>This is just a bit of code demonstrating the ability to use Angular’s inline filtering capability to format numbers depending on another piece of data. I had a scenario where the numbers passed to the view could represent numeric units or monetary units. In order to keep the code lean and reusable I chose the following method.</p>
 
-    <article class="stuff">
-        <h3>
-            <a href="/stuff/rotating-and-fading.html">Rotating and Fading</a>
-        </h3>
-        <div class="excerpt">
-            <p data-height="525" data-theme-id="0" data-slug-hash="rcamj" data-default-tab="result" data-user="_jasonhodges" class="codepen">See the Pen <a href="http://codepen.io/_jasonhodges/pen/rcamj/">Rotating and Fading</a> by Jason Hodges (<a href="http://codepen.io/_jasonhodges">@_jasonhodges</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-<script async="" src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p>The three lines below reside in the directive template file.</p>
+
+<p><code class="highlighter-rouge">liability-list.template.html</code></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>
+Available: {{ (t.UnitType == "Dollars") ? (t.UnitsAvailable | currency:'$') : (t.UnitsAvailable | number:0) }}
+Used: {{ (t.UnitType == "Dollars") ? (t.UnitsUsed | currency:"$") : (t.UnitsUsed | number:0) }}
+Max: {{ (t.UnitType == "Dollars") ? (t.UnitValue | currency:"$") : (t.UnitValue | number:0) }}
+
+</code></pre>
+</div>
+
+<p>This is the directive that handles it all.</p>
+
+<p><code class="highlighter-rouge">liabilityItem.directive.js</code></p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="s1">'use strict'</span><span class="p">;</span>
+
+  <span class="nx">angular</span>
+    <span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'starter'</span><span class="p">)</span>
+    <span class="p">.</span><span class="nx">directive</span><span class="p">(</span><span class="s1">'liabilityItem'</span><span class="p">,</span> <span class="nx">liabilityItem</span><span class="p">);</span>
+
+  <span class="kd">function</span> <span class="nx">liabilityItem</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">directive</span> <span class="o">=</span> <span class="p">{</span>
+      <span class="na">scope</span><span class="p">:</span> <span class="p">{</span>
+        <span class="na">t</span><span class="p">:</span> <span class="s1">'=itemData'</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="na">templateUrl</span><span class="p">:</span> <span class="s1">'./liability-list.template.html'</span><span class="p">,</span>
+      <span class="na">link</span><span class="p">:</span> <span class="nx">link</span><span class="p">,</span>
+      <span class="na">restrict</span><span class="p">:</span> <span class="s1">'E'</span>
+    <span class="p">};</span>
+    <span class="k">return</span> <span class="nx">directive</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">})();</span></code></pre></figure>
+
+<p>Lastly, this is the snippet of code from within the index file of the view.  The ‘tier’ is an array of objects provided via controller.</p>
+
+<p><code class="highlighter-rouge">index.html</code></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;liability-Item</span>
+  <span class="na">ng-repeat=</span><span class="s">"t in tier"</span>
+  <span class="na">item-data=</span><span class="s">"t"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/liability-Item&gt;</span></code></pre></figure>
 
 
-            <!-- <p>
-                <a href="/stuff/rotating-and-fading.html">read more &rarr;</a>
-            </p> -->
-        </div>
+  </div>
 
-    </article>
+    <aside>
+      <h3>Comments</h3>
+      
+      <div id="disqus_thread"></div>
+      <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+    </aside>
 
-    <article class="stuff">
-        <h3>
-            <a href="/stuff/scss-gradient-thing.html">Scss Gradient Thing</a>
-        </h3>
-        <div class="excerpt">
-            <p data-height="510" data-theme-id="0" data-slug-hash="tmdKL" data-user="_jasonhodges" data-default-tab="result" class="codepen">See the Pen <a href="http://codepen.io/_jasonhodges/pen/tmdKL">Pure SCSS Gradient</a> by Jason Hodges (<a href="http://codepen.io/_jasonhodges">@_jasonhodges</a>) on <a href="http://codepen.io">CodePen</a></p>
-<script async="" src="//codepen.io/assets/embed/ei.js"></script>
-
-
-            <!-- <p>
-                <a href="/stuff/scss-gradient-thing.html">read more &rarr;</a>
-            </p> -->
-        </div>
-
-    </article>
-
+</article>
 
       </div>
     </div>
