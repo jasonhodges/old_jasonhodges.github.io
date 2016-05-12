@@ -21,7 +21,7 @@ This is not a typical night but I've earned this time to relax and decompress. W
 
 I just successfully completed a Java project for my programming class I am currently in. I got obsessive about it and put in a decent amount of time on it. In the end the time committed paid off as I received the highest mark in each grading criterion on my first submission.
 
-    So... back to this winter thing.
+  So... back to this winter thing.
 
 Some things I have started to realize being a father and a husband is that the spark in winter time is back and the holidays, specifically Christmas, have excitement again. Only now there is this awesome feeling I get thinking about making this time of year great for my family.
 

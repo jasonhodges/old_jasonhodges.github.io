@@ -3,10 +3,41 @@ layout: default
 title: resume
 ---
 
-<h2>coming soon...</h2>
-<paper-material elevation="1">
-  <h2>Education, Training, and Certifications</h2>
-  <b>Western Governors University </b><br>
-  <span>Bachelor of Science in Information Technology - Software</span> <br>
-  <span>September 2015</span>
-</paper-material>
+<header class="page-header">
+  {% if site.resume_avatar == 'true' %}
+  <img src="/assets/images/avatar.png" alt="my photo" class="avatar">
+  {% endif %}
+</header>
+<!--Experience-->
+<section class="content-section">
+  <header class="section-header">
+    <h2>Experience</h2>
+  </header>
+  {% for experience in site.data.experience %}
+    <div class="content-section-title-container">
+      <h3 class="resume-item-company">{{ experience.company }}</h3>
+    </div>
+
+    <h4 class="resume-item-title">{{ experience.title }} &bull; {{experience.from}} &mdash; {{experience.to}}</h4>
+      {% for description in experience.description %}
+      <p class="resume-item-copy">{{ description.item }}</p>
+      {% endfor %}
+  {% endfor %}
+</section>
+<!--End Experience-->
+<!--Education-->
+<section class="content-section">
+  <header class="section-header">
+    <h2>Education</h2>
+  </header>
+  {% for education in site.data.education %}
+  <div class="content-section-title-container">
+    <h3 class="resume-item-company">{{ education.school }}</h3>
+  </div>
+
+  <h4 class="resume-item-title">{{ education.degree }} &bull; {{education.from}} &mdash; {{education.to}}</h4>
+
+  {% endfor %}
+</section>
+<!--End Education-->
+

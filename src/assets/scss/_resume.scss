@@ -1,0 +1,43 @@
+.page-header { padding: 1.5rem 0;
+
+  .avatar {
+    max-width: 100%;
+    overflow: hidden;
+    width: 95px;
+    @include border-radius(100px);
+    margin: 0 auto;
+    display: block;
+  }}
+.content-section-title-container{
+  overflow: hidden;
+  text-align: center;
+}
+.resume-item-company{
+  background-color: $brand-color;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  float: left;
+  padding: 0 2em;
+}
+.resume-item-company:before,
+.resume-item-company:after{
+  background: $grey;
+  content: "";
+  display: block;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  width: 400%;
+}
+.resume-item-company:before {
+  right: 100%;
+}
+.resume-item-company:after {
+  left: 100%;
+}
+.resume-item-title:before{
+  color: $brand-color;
+  content: '◼︎';
+  padding-right: 0.5em;
+}

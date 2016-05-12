@@ -2,7 +2,7 @@
 layout: post
 title: The Important Things	
 categories: blog
-permalink: /blog/The_Important_Things
+permalink: /blog/The_Important_Things/
 tags: [life, family, thoughts]
 comments: true
 excerpt: sometimes the things we obsess over are not the most important

@@ -2,7 +2,12 @@
 The main SCSS file for everything, yep
 */
 
+@import "variables";
 @import "main";
 @import "base";
 @import "layout";
 @import "syntax-highlighting";
+
+@import "mixins";
+@import "custom";
+@import "resume";

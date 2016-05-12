@@ -3,8 +3,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.name }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title %} {{ page.title }} | {% endif %}Jason Hodges - Web Developer - Columbus, IN</title>
+  {% if page.seo__desc %}
+  <meta name="description" content="{{ page.seo__desc }}">
+  {% endif %}
+  {% if page.seo__key %}
+  <meta name="keywords" content="{{ page.seo__key }}">
+  {% endif %}
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ page.seo__desc }}{% endif %}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
   <!-- CSS -->

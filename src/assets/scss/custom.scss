@@ -1,0 +1,10 @@
+body {
+	background-image: url("/assets/images/b_bkgrd.png");
+}
+.my__img-container{
+  display: flex !important;
+  .my__img{
+    border: 1px solid;
+    border-radius: 300px 300px;
+  }
+}

@@ -16,18 +16,18 @@ I know some people may read this and quickly think "that could be done through a
 
 Just to recap, these are the steps I wanted to accomplish -
 
-+ {:.jls} Set Windows Explorer Folder Options for:
++ Set Windows Explorer Folder Options for:
     - Show Full Path
     - Uncheck 'Hide Extension of Known File Types'
     - Uncheck 'Remember View'
 ^
-+ {:.jls} Configure Microsoft Access Settings for:
++ Configure Microsoft Access Settings for:
     - Security
     - Keyboard settings
     - Menu settings
-+ {:.jls} Copy a set of shortcuts to the Users Desktop
-+ {:.jls} Set the User Data Source for ODBC connections
-+ {:.jls} Map a network drive 
++ Copy a set of shortcuts to the Users Desktop
++ Set the User Data Source for ODBC connections
++ Map a network drive 
 
 The first part of the batch script turns `@ECHO ON` so the commands will be displayed within the CMD Prompt window. Next, I map the network drive the User will need access to. The space after the drive letter is key for this to work. `persistent:yes` is used to set the mapped drive to reconnect each time the User logs in. _example drive letter and directory provided for security_
 

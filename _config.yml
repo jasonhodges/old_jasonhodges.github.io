@@ -1,8 +1,8 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: jasonhodges.me
-description: personal website of Jason Hodges
-url: jasonhodges.github.io
+description: Jason Hodges is a Web Developer located in Columbus Indiana specializing in Website Development and Mobile Web Applications.
+url: jasonhodges.me
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
 source: src
@@ -16,8 +16,16 @@ author:
   name: Jason Hodges
   email: jason@jasonhodges.me
   uri: jasonhodges.me
-  bio: 
+  bio:
   twitter: _jasonhodges
+  github: jasonhodges
+  linkedin: jasonhodges09
+
+# Resume settings
+resume_avatar:          true
+resume_name:            Jason Hodges
+resume_title:           Web Developer
+resume_contact_email:   jason@jasonhodges.me
 
 # _config.build.yml overwrites these options when you run `gulp build`
 # Enables future posts (posts with dates in the future) and drafts
@@ -35,12 +43,17 @@ paginate_path: 'page:num'
 excerpt_separator: '<!--more-->'
 
 # Markdown library and options
-markdown: redcarpet
+#highlighter: rouge
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  syntax_highlighter: rouge
 redcarpet:
   extensions: ['no_intra_emphasis', 'tables', 'fenced_code_blocks', 'autolink', 'smart',
               'strikethrough', 'superscript', 'underline', 'highlight', 'footnotes']
-highlighter: true
 
+#pygments: true
 # Extending Jekyll
 gems:
   - jekyll-archives
@@ -66,3 +79,12 @@ jekyll-archives:
     month: '/archive/:year/:month/'
     category: '/category/:name/'
     tags: '/tag/:name/'
+
+
+# Resume Settings
+resume_avatar:    'true'
+resume_name:      'Jason Hodges'
+resume_title:     'Web Developer'
+resume_email:     'jason@jasonhodges.me'
+
+resume_available: 'yes'

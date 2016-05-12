@@ -1,0 +1,30 @@
+- company: SIHO Insurance Services
+  title: Web Developer
+  from: September 2013
+  to: Current
+  description:
+    - item: •	Ceatively coordinating and operating processes and procedures for development while collaborating with staff and management to supervise projects from the point of creation to execution.
+    - item: •	Corporate website as well as custom customer portal utilizing .NET Framework 3.5 & 4.0.
+    - item: •	Administers local development, keeping all projects under source control while also performing routine analyses and maintenance of the company website and partner micro-sites.
+    - item: •	Manages and facilitates IIS7 configurations on local, test, and production servers.
+    - item: • Developed Android / iOS mobile app
+
+- company: Stratosphere Quality
+  title: Support Analyst
+  from: October 2012
+  to: September 2013
+  description:
+    - item: •	Acted as the lead Support Technician for over 600 remote and on-site employees, implementing expert analyses and resolutions for VPN, network connectivity, and printer issues through performing effective troubleshooting techniques and procedures.
+    - item: •	Provided technical support for various products (Windows 7/Office 2007 & 2010) and services (user account creation/termination and operating the Manage Engine Service Desk for in-house help desk).
+    - item: •	Performed end user equipment requests, deployments, and asset tracking, implementing a cost-saving technique through bringing equipment handling and provisioning in-house , saving over $40,000 annually.
+    - item: •	Administered mobile device account support for Sprint, AT&T and Verizon, performing device configurations for iOS and Android, as well as providing support for iPhones and iPads.
+
+- company: Dawes Fretzin
+  title: IT Liason
+  from: November 2011
+  to: May 2012
+  description:
+    - item: •	Maintained a network of over 30 Windows XP / 7 ran PC's and 2 servers running Windows Server 2003, performing exceptional server and preventative maintenance.
+    - item: •	Responsible for ensuring the daily tape backup and weekly rotation (using Microsoft Backup Executive), managing equipment selection and purchase, and performing print management on servers.
+    - item: •	Evaluated and resolved EMR software and wireless network issues.
+

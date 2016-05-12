@@ -17,7 +17,7 @@ import autoprefixer from 'autoprefixer';
 // Yargs for command line arguments
 import {argv} from 'yargs';
 
-const timestamp = new Date().toISOString();
+const timestamp = new Date().toISOString().slice(0, 10);
 // 'gulp clean:assets' -- deletes all assets except for images
 // 'gulp clean:dist' -- erases the dist folder
 // 'gulp clean:gzip' -- erases all the gzipped files
@@ -183,20 +183,22 @@ gulp.task('html', () =>
 
 // 'gulp deploy' -- pushes your dist folder to Github
 gulp.task('deploy', () => {
-  return gulp.src('dist/**/*')
+  return gulp.src(['dist/**/*', '!./node_modules/**'])
     .pipe($.ghPages({
-      remoteUrl: "https://github.com/jasonhodges/jasonhodges.github.io",
-      branch: "master",
-      message: "Update " + timestamp
+      remoteUrl: 'https://github.com/jasonhodges/jasonhodges.github.io',
+      branch: 'master',
+      cacheDir: '../deployCache',
+      message: 'Update ' + timestamp
     }));
 });
 // 'gulp devdeploy' -- pushes your project folder to Github
 gulp.task('devdeploy', () => {
-  return gulp.src(['~/Sites/JasonHodges.me/*.*', 'src/**/*'])
+  return gulp.src(['~/Sites/JasonHodges.me/*.*', 'src/**/*', '!./node_modules/**'])
     .pipe($.ghPages({
-      remoteUrl: "https://github.com/jasonhodges/jasonhodges.github.io",
-      branch: "development",
-      message: "Update " + timestamp
+      remoteUrl: 'https://github.com/jasonhodges/jasonhodges.github.io',
+      branch: 'development',
+      cacheDir: '../deployCache',
+      message: 'Update ' + timestamp
     }));
 });
 

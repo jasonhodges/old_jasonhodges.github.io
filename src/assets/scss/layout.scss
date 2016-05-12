@@ -19,7 +19,7 @@
 
     &,
     &:visited {
-        color: $grey-color-dark;
+        color: $greenlt;
     }
 }
 
@@ -32,7 +32,7 @@
     }
 
     .page-link {
-        color: $text-color;
+        color: $green;
         line-height: $base-line-height;
 
         // Gaps between nav items, but not on the last one
@@ -46,6 +46,7 @@
         top: 9px;
         right: $spacing-unit / 2;
         background-color: $background-color;
+	    color: $nav-text-color;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
@@ -80,6 +81,7 @@
         }
 
         .page-link {
+	        color: $nav-text-color;
             display: block;
             padding: 5px 10px;
 

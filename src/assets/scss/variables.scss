@@ -1,0 +1,21 @@
+/*----------------*\
+    $colors
+\*----------------*/
+$white: #fff;
+$brown: #342819;
+$green: #7d9ea3;
+$greenlt: tint($green, 30%);
+$greendk: shade($green, 30%);
+$grey: #3d403f;
+$black: #2b2b2b;
+
+$brand-color: $green;
+$text-color: $white;
+$nav-text-color: $green;
+
+/*----------------*\
+    $padding
+\*----------------*/
+.p_l_2{
+  padding-left: 2em;
+}
