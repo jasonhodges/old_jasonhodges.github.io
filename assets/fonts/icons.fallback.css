@@ -1,0 +1,32 @@
+.icon-arrow-left {
+	background-image: url('png/arrow-left.png');
+	background-repeat: no-repeat;
+}
+.icon-arrow-right {
+	background-image: url('png/arrow-right.png');
+	background-repeat: no-repeat;
+}
+.icon-console {
+	background-image: url('png/console.png');
+	background-repeat: no-repeat;
+}
+.icon-github {
+	background-image: url('png/github.png');
+	background-repeat: no-repeat;
+}
+.icon-mail {
+	background-image: url('png/mail.png');
+	background-repeat: no-repeat;
+}
+.icon-point-left {
+	background-image: url('png/point-left.png');
+	background-repeat: no-repeat;
+}
+.icon-point-right {
+	background-image: url('png/point-right.png');
+	background-repeat: no-repeat;
+}
+.icon-twitter {
+	background-image: url('png/twitter.png');
+	background-repeat: no-repeat;
+}
