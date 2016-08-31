@@ -1,8 +1,8 @@
 - company: ClickFox
   title: Software Engineer
   from: June 2016
-  to:
-  decription:
+  to: current
+  description:
     - item: •	Agile development through pair programming, Pivotal Labs.
     - item: •	Participate in daily stand-up, weekly retro and weekly planning meetings.
     - item: •	TDD utilizing Angular 2, Redux, D3
