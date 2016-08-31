@@ -1,5 +1,6 @@
 ---
 layout: post
+published: true
 title:  "Scss Gradient Thing"
 date:   2014-02-10 20:19:00
 categories: stuff

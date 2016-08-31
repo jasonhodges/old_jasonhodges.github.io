@@ -2,7 +2,7 @@
 layout : post
 title: Evernote AppleScript
 categories: blog
-permalink: /blog/Evernote_AppleScript
+permalink: /blog/Evernote-AppleScript/
 comments : true
 excerpt: How I wrote an AppleScript to add an Evernote entry
 seo__desc : AppleScript to create and append top journal entries in Evernote

@@ -4,7 +4,9 @@ body {
 .my__img-container{
   display: flex !important;
   .my__img{
+    width: 100px;
+    height: 100px;
     border: 1px solid;
-    border-radius: 300px 300px;
+    border-radius: 200px 200px;
   }
 }

@@ -1,7 +1,7 @@
 # Title, decription, tagline and URL for your site
 # Can be used in your theme by calling 'site.title' and so on
 name: jasonhodges.me
-description: Jason Hodges is a Web Developer located in Columbus Indiana specializing in Website Development and Mobile Web Applications.
+description: Jason Hodges is a Software Engineer located in Denver Colorado specializing in Angular, TDD, Redux, & D3.
 url: jasonhodges.me
 
 # Used so Jekyll outputs the site correctly so Gulp can do what it wants
@@ -24,13 +24,13 @@ author:
 # Resume settings
 resume_avatar:          true
 resume_name:            Jason Hodges
-resume_title:           Web Developer
+resume_title:           Software Engineer
 resume_contact_email:   jason@jasonhodges.me
 
 # _config.build.yml overwrites these options when you run `gulp build`
 # Enables future posts (posts with dates in the future) and drafts
 future: true
-show_drafts: true
+show_drafts: false
 # Disables the more accurate related posts for faster generating of the site
 lsi: false
 # Only make the last 10 posts so generating isn't slow
@@ -84,7 +84,7 @@ jekyll-archives:
 # Resume Settings
 resume_avatar:    'true'
 resume_name:      'Jason Hodges'
-resume_title:     'Web Developer'
+resume_title:     'Software Engineer'
 resume_email:     'jason@jasonhodges.me'
 
 resume_available: 'yes'

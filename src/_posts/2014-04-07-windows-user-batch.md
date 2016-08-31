@@ -2,7 +2,7 @@
 layout: post
 title: Windows User Batch
 categories: blog
-permalink: /blog/Windows_User_Batch
+permalink: /blog/Windows-User-Batch/
 tags: [Windows, Server, user config]
 comments: true
 excerpt: Batch file for configuring general settings for a Windows user

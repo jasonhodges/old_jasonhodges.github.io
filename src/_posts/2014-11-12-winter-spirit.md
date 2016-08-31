@@ -2,7 +2,7 @@
 layout : post
 title: Winter Spirit
 categories: blog
-permalink: /blog/Winter_Spirit
+permalink: /blog/Winter-Spirit/
 comments : true
 excerpt: Cold outside but feeling warm
 seo__desc : random thoughts on how I feel about Winter

@@ -1,5 +1,6 @@
 ---
 layout: post
+published: false
 title: "Rotating and Fading"
 date: 2014-03-12
 categories: stuff

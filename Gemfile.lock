@@ -79,6 +79,10 @@ DEPENDENCIES
   jekyll-gist
   jekyll-paginate
   jekyll-sitemap
+  kramdown
   octopress (~> 3.0)
-  redcarpet
+  rouge
   scss_lint
+
+BUNDLED WITH
+   1.12.5

@@ -17,9 +17,25 @@
 
   <!-- JS -->
   <!-- inject:js -->
-  <script src="/assets/javascript/index.js"></script>
+  <script src="/assets/javascript/index-75d1ad12bf.min.js"></script>
   <!-- endinject -->
 
+    <script>
+	    (function (b, o, i, l, e, r) {
+		    b.GoogleAnalyticsObject = l;
+		    b[l] || (b[l] =
+				    function () {
+					    (b[l].q = b[l].q || []).push(arguments)
+				    });
+		    b[l].l = +new Date;
+		    e      = o.createElement(i);
+		    r      = o.getElementsByTagName(i)[0];
+		    e.src  = 'https://www.google-analytics.com/analytics.js';
+		    r.parentNode.insertBefore(e, r)
+	    }(window, document, 'script', 'ga'));
+	    ga('create', 'UA-46838003-1', 'auto');
+	    ga('send', 'pageview');
+    </script>
     <!-- Grab Google CDN's jQuery, fall back to local if offline -->
     <!-- 2.0 for modern browsers, 1.10 for .oldie -->
     <script>

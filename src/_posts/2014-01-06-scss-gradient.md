@@ -1,10 +1,10 @@
 ---
-layout: post
-title: Sass gradient
-categories: blog
-permalink: /blog/Sass_Gradient
-comments: true
-excerpt: experiment with Sass Control Directive
+layout : post
+title : Sass gradient
+categories : blog
+permalink : /blog/Sass-Gradient/
+comments : true
+excerpt : experiment with Sass Control Directive
 seo__desc : Sass gradient twist made with a loop and numerous div's
 seo__key : Sass, self-education, code, Haml, CodePen
 ---
@@ -36,7 +36,8 @@ compiles to...
 
 Now that each div had been created and ID assigned I went straight to the Sass. I will break each section out and explain:
 
-###The Variables
+### The Variables ###
+
 {% highlight sass %}
 /*Need 'lines' var*/
 $lines: 100;
@@ -52,7 +53,7 @@ $w: 9px;
 
 These are the variables I set up to use in the rest of the Sass. As you will see later in the post I used a `@while` loop to style each of the individual div's. `$lines` will tell the `@while` control directive how many lines to create style for. The other variables could have been placed inside the loop but I just wanted to stick them all together for easier manipulation. Here is the entire code snippet:
 
-###The Loop
+### The Loop ###
 {% highlight sass %}
 @while $lines > 0{
     #line#{$lines}{height: $h;
@@ -70,6 +71,6 @@ So what's happening here? The loop is started because `$lines` is greater than 0
 
 I couldn't leave it at just getting the gradient so I played around some more and added `rotate` to each div as well which create a pretty neat looking thing. I won't get into the other tweaks I made but you can check it out for yourself.
 
-###The Result
+### The Result ###
 <p data-height="510" data-theme-id="0" data-slug-hash="tmdKL" data-user="_jasonhodges" data-default-tab="result" class='codepen'>See the Pen <a href='http://codepen.io/_jasonhodges/pen/tmdKL'>Pure Sass Gradient</a> by Jason Hodges (<a href='http://codepen.io/_jasonhodges'>@_jasonhodges</a>) on <a href='http://codepen.io'>CodePen</a></p>
 <script async src="//codepen.io/assets/embed/ei.js"></script>
