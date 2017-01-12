@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>jasonhodges.me/stuff/ng2-gist.html</loc>
+    <lastmod>2017-01-10T00:00:00-07:00</lastmod>
+  </url>
+  <url>
+    <loc>jasonhodges.me/blog/Misunderstanding/</loc>
+    <lastmod>2016-10-14T00:00:00-06:00</lastmod>
+  </url>
+  <url>
     <loc>jasonhodges.me/blog/Angular-Conditional-Number-Format/</loc>
     <lastmod>2016-03-03T00:00:00-07:00</lastmod>
   </url>
@@ -33,10 +41,6 @@
     <lastmod>2014-02-10T13:19:00-07:00</lastmod>
   </url>
   <url>
-    <loc>jasonhodges.me/blog/Sass-Gradient/</loc>
-    <lastmod>2014-01-06T00:00:00-07:00</lastmod>
-  </url>
-  <url>
     <loc>jasonhodges.me/404.html</loc>
   </url>
   <url>
@@ -54,9 +58,6 @@
   <url>
     <loc>jasonhodges.me/</loc>
   </url>
-    <url>
-      <loc>jasonhodges.me/blog/Sass-Gradient/</loc>
-    </url>
     <url>
       <loc>jasonhodges.me/stuff/scss-gradient-thing.html</loc>
     </url>
@@ -80,5 +81,11 @@
     </url>
     <url>
       <loc>jasonhodges.me/blog/Angular-Conditional-Number-Format/</loc>
+    </url>
+    <url>
+      <loc>jasonhodges.me/blog/Misunderstanding/</loc>
+    </url>
+    <url>
+      <loc>jasonhodges.me/stuff/ng2-gist.html</loc>
     </url>
 </urlset>
