@@ -6,7 +6,7 @@ permalink : /blog/Angular-Conditional-Number-Format/
 comments : true
 excerpt: Solution to a little number formatting issue I worked out
 seo__desc : directive to format a number depending on type
-seo__key : Angular, AngularJS, directives, formatting, Columbus IN
+seo__key : Angular, AngularJS, directives, formatting, Denver CO
 ---
 This is just a bit of code demonstrating the ability to use Angular's inline filtering capability to format numbers depending on another piece of data. I had a scenario where the numbers passed to the view could represent numeric units or monetary units. In order to keep the code lean and reusable I chose the following method. 
 
