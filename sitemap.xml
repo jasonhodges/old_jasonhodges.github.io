@@ -41,6 +41,10 @@
     <lastmod>2014-02-10T13:19:00-07:00</lastmod>
   </url>
   <url>
+    <loc>jasonhodges.me/blog/Sass-Gradient/</loc>
+    <lastmod>2014-01-06T00:00:00-07:00</lastmod>
+  </url>
+  <url>
     <loc>jasonhodges.me/404.html</loc>
   </url>
   <url>
@@ -58,6 +62,12 @@
   <url>
     <loc>jasonhodges.me/</loc>
   </url>
+  <url>
+    <loc>jasonhodges.me/page2/</loc>
+  </url>
+    <url>
+      <loc>jasonhodges.me/blog/Sass-Gradient/</loc>
+    </url>
     <url>
       <loc>jasonhodges.me/stuff/scss-gradient-thing.html</loc>
     </url>
