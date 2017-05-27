@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>jasonhodges.me/stuff/ngx-gist.html</loc>
+    <loc>jasonhodges.me/blog/angular-animation.html</loc>
     <lastmod>2017-05-27T00:00:00-04:00</lastmod>
   </url>
   <url>
-    <loc>jasonhodges.me/stuff/angular-animation.html</loc>
-    <lastmod>2017-05-27T00:00:00-04:00</lastmod>
+    <loc>jasonhodges.me/stuff/ngx-gist.html</loc>
+    <lastmod>2017-05-25T00:00:00-04:00</lastmod>
   </url>
   <url>
     <loc>jasonhodges.me/stuff/ng2-gist.html</loc>
@@ -83,9 +83,9 @@
       <loc>jasonhodges.me/stuff/ng2-gist.html</loc>
     </url>
     <url>
-      <loc>jasonhodges.me/stuff/angular-animation.html</loc>
+      <loc>jasonhodges.me/stuff/ngx-gist.html</loc>
     </url>
     <url>
-      <loc>jasonhodges.me/stuff/ngx-gist.html</loc>
+      <loc>jasonhodges.me/blog/angular-animation.html</loc>
     </url>
 </urlset>
